@@ -1,5 +1,4 @@
 <?php
-include_once '../controllers/userListControllers.php';
 include_once 'header.php';
 ?>
 <table class="table table-bordered text-center">

@@ -1,0 +1,6 @@
+<IfModule mod_rewrite.c>
+    Options -Indexes +FollowSymlinks
+    RewriteEngine on
+    RewriteCond $1 !^(index\.php|assets|vendor)  
+    RewriteRule ^(.*)$ index.php?path=$1 [NC,L]
+</IfModule>

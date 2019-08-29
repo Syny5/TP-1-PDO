@@ -1,4 +1,4 @@
 <?php
-define('DSN', 'mysql:host=localhost;dbname=DB-TP-1-PDO');
-define('USER', 'nicolas');
-define('PASSWORD', 'nK19081996');
+define('DSN', 'mysql:host=localhost;dbname=tp-1-pdo');
+define('USER', 'syn');
+define('PASSWORD', 'linkinpark80');

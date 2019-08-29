@@ -1,5 +1,11 @@
 <?php
-include_once '../config.php';
+namespace Models;
+
+use Exception;
+use PDO;
+use const DSN;
+use const PASSWORD;
+use const USER;
 class User {
     private $lastName;
     private $firstName;
@@ -31,14 +37,14 @@ class User {
     public function getZipCode() {
         return $this->zipCode;
     }
-    public function getPhoneNumber() {
-        return $this->phoneNumber;
+    public function getPhone() {
+        return $this->phone;
     }
     public function getIdService() {
         return $this->idService;
     }
     public function getAllUsers() {
-        $sql  = 'SELECT `lastName`, `firstName`, DATE_FORMAT(`birthDate`, "%d/%m/%Y") birthdate, `adress`, `zipCode`, `phoneNumber`, `service`.`name` AS service FROM `users` INNER JOIN `service` USING (idService);';        
+        $sql  = 'SELECT `lastName`, `firstName`, DATE_FORMAT(`birthDate`, "%d/%m/%Y") birthdate, `address`, `zipCode`, `phone`, `service`.`name` AS service FROM `user` INNER JOIN `service` USING (idService);';        
         $usersRequest = $this->db->query($sql);
         $userList = $usersRequest->fetchAll(PDO::FETCH_OBJ);
         return $userList;
